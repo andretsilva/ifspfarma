@@ -18,15 +18,16 @@ public class CaixaControl {
 		return bdCaixa.LoginFechamento(password);		
 	}
 
-	public void AbrirCaixa(Caixa caixa,DefaultUI ui){ 
-		caixa.setCaixaAberto(true);
-		ui.AtualizaMenu();
+	public void AbrirCaixa(Caixa caixa,DefaultUI ui){
+		caixa.registraInteressado(ui);
+		caixa.setCaixaEstado("aberto");//mudanca para Observer
+//		ui.AtualizaMenu();//mudanca para Observer
 		JDBCCaixa bdCaixa = new JDBCCaixa();
 		caixa.setIdCaixa(bdCaixa.AbreCaixa(caixa));
 	};
 	
 	public void FecharCaixa(Caixa caixa,DefaultUI ui){ 
-		caixa.setCaixaAberto(false);
+		caixa.setCaixaEstado("fechado");//mudanca para Observer
 		caixa.setMoedas5(0);
 		caixa.setMoedas10(0);
 		caixa.setMoedas25(0);
@@ -40,7 +41,7 @@ public class CaixaControl {
 		caixa.setNotas100(0);
 		JDBCCaixa bdCaixa = new JDBCCaixa();
 		bdCaixa.FechaCaixa(caixa);
-		ui.AtualizaMenu();
+//		ui.AtualizaMenu();
 	};
 	public int ObterNumeroDeVendas() {
 		int total=0;

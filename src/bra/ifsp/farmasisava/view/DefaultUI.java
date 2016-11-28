@@ -20,12 +20,13 @@ import javax.swing.border.EtchedBorder;
 import bra.ifsp.farmasisava.model.Caixa;
 import bra.ifsp.farmasisava.model.Usuario;
 
-public class DefaultUI {
+public class DefaultUI implements CaixaObserver{
 	private Caixa caixa = new Caixa();
 	private JMenuItem subMenuAbrirCaixa = new JMenuItem("Abrir Caixa");
 	private JMenuItem subMenuFecharCaixa = new JMenuItem("Fechar Caixa");
 	private JMenu menuVenda = new JMenu("Vendas");
 	private JMenuItem subMenuVenda = new JMenuItem("Iniciar");
+	
 	public DefaultUI(Usuario usuario) {
 		DefaultUI ui = this;
 		JFrame frame = new JFrame("FarmasisAVA - Usuário: " + usuario.getLogin());
@@ -42,9 +43,6 @@ public class DefaultUI {
 		JMenuBar menuBar = new JMenuBar();
 		
 		//Criando o menu de cadastro e seus subitens
-		
-		
-		
 		JMenu menuClientes = new JMenu("Clientes Especiais");
 		menuBar.add(menuClientes);
 			JMenuItem subMenuItemClientesCadastrar = new JMenuItem("Cadastrar");
@@ -155,6 +153,8 @@ public class DefaultUI {
 			}
 		});
 		menuVenda.setEnabled(false);
+		/*Caixa ccc = new Caixa();
+		ccc.registraInteressado(this);*/
 		
 		subMenuAbrirCaixa.addActionListener(new ActionListener() {
 			@Override
@@ -173,11 +173,7 @@ public class DefaultUI {
 			}
 		});
 		
-		//Criando o menu de Iniciar as Vendas			
-		
-		
-	
-		
+		//Criando o menu de Iniciar as Vendas
 		frame.setJMenuBar(menuBar);
 		frame.add(panelPrincipal);
 		
@@ -214,10 +210,11 @@ public class DefaultUI {
 		barraLateral.add(relogio,BorderLayout.SOUTH);
 	
 		frame.setVisible(true);
-		AtualizaMenu();
+		//AtualizaMenu();
 	}
 	
-	public void AtualizaMenu() {
+	
+	/*public void AtualizaMenu() {
 		if(caixa.isCaixaAberto()) {
 			subMenuAbrirCaixa.setEnabled(false);
 			subMenuFecharCaixa.setEnabled(true);
@@ -227,7 +224,19 @@ public class DefaultUI {
 			subMenuFecharCaixa.setEnabled(false);
 			menuVenda.setEnabled(false);
 		}
+	}*/
+	@Override
+	public void notificaMudanca(Caixa caixa) {
+		if(caixa.getCaixaEstado() == "aberto"){
+			subMenuAbrirCaixa.setEnabled(false);
+			subMenuFecharCaixa.setEnabled(true);
+			menuVenda.setEnabled(true);
+		}
+		else{
+			subMenuAbrirCaixa.setEnabled(true);
+			subMenuFecharCaixa.setEnabled(false);
+			menuVenda.setEnabled(false);
+		}
 	}
-	
 	
 }
