@@ -70,7 +70,7 @@ public class JDBCMedicamentoDao {
 			}
 		}
 		
-		public Medicamento ObterMedicamento(String codigoBarras) {
+		public Medicamento ObterMedicamento(String codigoBarras) throws Exception {
 			
 			try {
 				
@@ -82,25 +82,25 @@ public class JDBCMedicamentoDao {
 				comando.setString(1, codigoBarras);
 				
 				ResultSet resultado = comando.executeQuery();
-				
+
 				
 				Medicamento c = new Medicamento();
 				if (resultado.next()) {				
 					c.setCodigoBarras(resultado.getString("codigoBarras"));
 					c.setIdMedicamento(resultado.getInt("idMedicamento"));
 					c.setNome(resultado.getString("nome"));
-					c.setFabricante(resultado.getString("fabricante"));
 					c.setPreco(resultado.getDouble("preco"));
+					conexao.close ();
+					return c;
+				} else {
+					Exception error = new Exception("erro");
 					
+					throw error;
 				}
 				
 				
-				conexao.close ();
-				
-				return c;
 				
 			} catch ( Exception e) {
-				e. printStackTrace ();
 				return null;
 			}
 		}

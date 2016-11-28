@@ -12,12 +12,12 @@ public class JDBCEstoqueDao {
 	public Estoque obterEstoque(String codigoBarras) {
 		Medicamento medicamento = new Medicamento();
 		MedicamentoControl mc = new MedicamentoControl();
-		medicamento = mc.obterMedicamento(codigoBarras);
+		
 		Estoque estoque = new Estoque();
 		Connection conexao = 
 				ConnectionFactory.createConnection();
 		try {
-			
+			medicamento = mc.obterMedicamento(codigoBarras);
 			String sql = "SELECT * from estoque where idMedicamento = ?" ;
 			PreparedStatement comando = 
 					conexao.prepareStatement(sql);

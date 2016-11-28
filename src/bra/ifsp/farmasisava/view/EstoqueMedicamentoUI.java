@@ -99,16 +99,21 @@ public class EstoqueMedicamentoUI extends JFrame {
 				String nomeMedicamento;
 				
 				EstoqueControl ec = new EstoqueControl();
-				
-				nomeMedicamento = ec.obterNomeMedicamento(txtCodigoBarras.getText().toString());
-				if(nomeMedicamento != null) {
-					Estoque estoque = new Estoque();
-					estoque = ec.obterEstoque(txtCodigoBarras.getText());
-					txtQuantidade.setText(String.valueOf(estoque.getQuantidade()).toString());
-					txtNomeMedicamento.setText(nomeMedicamento);
-					estoqueID = estoque.getIdEstoque();
-					btnNewButton.setEnabled(true);
+				try {
+					nomeMedicamento = ec.obterNomeMedicamento(txtCodigoBarras.getText().toString());
+					if(nomeMedicamento != null) {
+						Estoque estoque = new Estoque();
+						estoque = ec.obterEstoque(txtCodigoBarras.getText());
+						txtQuantidade.setText(String.valueOf(estoque.getQuantidade()).toString());
+						txtNomeMedicamento.setText(nomeMedicamento);
+						estoqueID = estoque.getIdEstoque();
+						btnNewButton.setEnabled(true);
+					}
+				} catch(Exception ex) {
+					JOptionPane.showMessageDialog(null, "Medicamento não encontrado", "Erro!",
+		                    JOptionPane.ERROR_MESSAGE);
 				}
+				
 				
 			}
 		});

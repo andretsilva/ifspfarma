@@ -119,9 +119,11 @@ public class MedicamentoAlterar extends JFrame {
 		JButton btnFiltrar = new JButton("Filtrar");
 		btnFiltrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				MedicamentoControl mc = new MedicamentoControl(); 
-				Medicamento medicamentoObtido = mc.obterMedicamento(txtCbBuscar.getText().toString());
-				if(medicamentoObtido.getCodigoBarras() != null) {
+				
+				try {
+					MedicamentoControl mc = new MedicamentoControl(); 
+					Medicamento medicamentoObtido = mc.obterMedicamento(txtCbBuscar.getText().toString());
+					
 					txtMedicamento.setText(medicamentoObtido.getNome());
 					txtCodigoBarras.setText(medicamentoObtido.getCodigoBarras());
 					txtCodigoBarras.setEditable(false);
@@ -129,9 +131,9 @@ public class MedicamentoAlterar extends JFrame {
 					txtFabricante.setText(medicamentoObtido.getFabricante());
 					btnSalvar.setEnabled(true);
 					
-				} else {
-					 JOptionPane.showMessageDialog(null, "Medicamento não encontrado", "Erro!",
-                             JOptionPane.ERROR_MESSAGE);
+				} catch(Exception ex) {
+					JOptionPane.showMessageDialog(null, "Medicamento não encontrado", "Erro!",
+                            JOptionPane.ERROR_MESSAGE);
 				}
 				
 			}

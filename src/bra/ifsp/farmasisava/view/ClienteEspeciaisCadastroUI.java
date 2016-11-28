@@ -168,34 +168,21 @@ public class ClienteEspeciaisCadastroUI {
 				cliente.setUf(cbUF.getSelectedItem().toString());
 				
 				SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
-				try {
-					Date data = format.parse(dtDdataNascimento.getText());
-					
-					cliente.setDataNascimento(data);
-						
-					if(cliente.validarIdade(data)){
-						cc.CadastrarCliente(cliente);
-						frameClientes.setVisible(false);
-						
-					} else {
-						JOptionPane.showMessageDialog(null, "Idade do cliente n„o esta na faixa correta!");
-					}
-				}
-				catch (Exception ex) {
-					System.out.println(ex.getMessage());
-				}
-				
-				
-				
-				
-				
-				
+			    try {
+			     Date data = format.parse(dtDdataNascimento.getText());     
+			     cliente.setDataNascimento(data);
+			     
+			     cliente.validarIdade(data);
+			     
+			     cc.CadastrarCliente(cliente);
+			     frameClientes.setVisible(false);      
+			    }
+			    catch (Exception ex) {
+			     JOptionPane.showMessageDialog(null, "Idade do cliente n√£o esta na faixa correta!");
+			     System.out.println(ex.getMessage());
+			    }
 			}
-			
-			
 		});
-		
-		
 		frameClientes.setVisible(true);
 	}
 }

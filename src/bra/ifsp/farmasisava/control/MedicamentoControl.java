@@ -21,10 +21,19 @@ public class MedicamentoControl {
 		
 	}
 	
-	public Medicamento obterMedicamento(String codigoBarras){
+	public Medicamento obterMedicamento(String codigoBarras) throws Exception{			
 		
 		JDBCMedicamentoDao cd = new JDBCMedicamentoDao();
-		return cd.ObterMedicamento(codigoBarras);
+		Medicamento medicamento;
+		try {
+			medicamento = cd.ObterMedicamento(codigoBarras);
+			return medicamento;
+		}
+		catch (Exception ex) {
+			Exception error = new Exception();
+			throw error;
+		}
+		
 	}
 
 	

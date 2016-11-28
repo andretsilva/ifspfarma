@@ -149,10 +149,10 @@ public class DefaultUI implements CaixaObserver{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-//				new VendaItensUI(caixa);
+				new VendaItensUI(caixa);
 			}
 		});
-		menuVenda.setEnabled(false);
+		//menuVenda.setEnabled(false);
 		/*Caixa ccc = new Caixa();
 		ccc.registraInteressado(this);*/
 		

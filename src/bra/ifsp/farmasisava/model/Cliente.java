@@ -68,7 +68,7 @@ public class Cliente {
 		this.dataNascimento = dataNascimento;
 	}
 	
-	public boolean validarIdade(java.util.Date data) {
+	public boolean validarIdade(java.util.Date data) throws Exception {
 
 	     Calendar dataNascimento = Calendar.getInstance();  
 	     dataNascimento.setTime(data); 
@@ -77,13 +77,13 @@ public class Cliente {
 	     int idade = dataAtual.get(Calendar.YEAR) - dataNascimento.get(Calendar.YEAR); 
 
 	     if ((idade < 65) || (idade > 120)) {
-	      return false;
-	     } 
-	     else 
-	     { 
-	      
-	      return true;
+	         Exception erro = new Exception();
+	         throw erro;
 	     }
+        else 
+        {       
+         return true;
+        }
 	 }
 	
 }
