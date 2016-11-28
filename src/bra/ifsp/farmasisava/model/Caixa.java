@@ -1,5 +1,10 @@
 package bra.ifsp.farmasisava.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import bra.ifsp.farmasisava.view.CaixaObserver;
+
 public class Caixa {
 	private int idCaixa;
 	private int notas2;
@@ -14,7 +19,19 @@ public class Caixa {
 	private int moedas50;
 	private int moedas100;
 	private double totalCaixa;
-	private boolean caixaAberto = false;
+	/*private boolean caixaAberto = false;*/
+	private String caixaEstado;
+
+	public String getCaixaEstado() {
+		return caixaEstado;
+	}
+
+	public void setCaixaEstado(String caixaEstado) {
+		this.caixaEstado = caixaEstado;
+		for(CaixaObserver interessado : this.interessados){
+			interessado.notificaMudanca(this);
+		}
+	}
 
 	public int getNotas2() {
 		return notas2;
@@ -117,13 +134,13 @@ public class Caixa {
 		this.totalCaixa = this.totalCaixa + dinheiro;
 	}
 
-	public boolean isCaixaAberto() {
+	/*public boolean isCaixaAberto() {
 		return caixaAberto;
 	}
 
 	public void setCaixaAberto(boolean caixaAberto) {
 		this.caixaAberto = caixaAberto;
-	}
+	}*/
 
 	public int getIdCaixa() {
 		return idCaixa;
@@ -131,6 +148,15 @@ public class Caixa {
 
 	public void setIdCaixa(int idCaixa) {
 		this.idCaixa = idCaixa;
+	}
+	
+	/*Implementacao do padrao Observer*/
+	private Set<CaixaObserver> interessados = new HashSet<CaixaObserver>();
+	public void registraInteressado(CaixaObserver interessado){
+		this.interessados.add(interessado);
+	}
+	public void removeInteresse(CaixaObserver interessado){
+		this.interessados.remove(interessado);
 	}
 	
 	
