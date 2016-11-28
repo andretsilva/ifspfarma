@@ -151,7 +151,7 @@ public class DefaultUI {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				new VendaItensUI(caixa);
+//				new VendaItensUI(caixa);
 			}
 		});
 		menuVenda.setEnabled(false);
