@@ -8,6 +8,7 @@ import java.util.Date;
 
 
 public class JDBCClienteDao implements ClienteDao{
+	
 		public void CadastrarCliente(Cliente cliente) {
 			Connection conexao = 
 					ConnectionFactory.createConnection();
