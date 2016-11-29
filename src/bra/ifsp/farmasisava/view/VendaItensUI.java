@@ -8,6 +8,7 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.text.MaskFormatter;
 
 import bra.ifsp.farmasisava.control.ClientesControl;
 import bra.ifsp.farmasisava.control.MedicamentoControl;
@@ -27,6 +28,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
+import javax.swing.JFormattedTextField;
 import javax.swing.JScrollPane;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -46,7 +48,8 @@ public class VendaItensUI extends JFrame {
 	private JTable table;
 	private JTextField txtCodigoBarras;
 	private JTextField txtQuantidade;
-	private JTextField txtCpfDesconto;
+	//private JTextField txtCpfDesconto;//aqui
+	private JFormattedTextField txtCpfDesconto;
 	private JTextField txtTotalCompra;
 	private ArrayList<ItemVenda> itens = new ArrayList<ItemVenda>();
 	private JTextField txtDesconto;
@@ -155,10 +158,23 @@ public class VendaItensUI extends JFrame {
 		lblCpf.setBounds(10, 19, 46, 14);
 		panel_1.add(lblCpf);
 		
-		txtCpfDesconto = new JTextField();
+		/*txtCpfDesconto = new JTextField();
+		txtCpfDesconto.setBounds(10, 36, 104, 20);
+		panel_1.add(txtCpfDesconto);
+		txtCpfDesconto.setColumns(10);*/
+		
+		txtCpfDesconto = new JFormattedTextField();
 		txtCpfDesconto.setBounds(10, 36, 104, 20);
 		panel_1.add(txtCpfDesconto);
 		txtCpfDesconto.setColumns(10);
+		
+		try {
+			MaskFormatter maskCPF = new MaskFormatter("###.###.###-##");
+			maskCPF.install(txtCpfDesconto);
+		}
+		catch(Exception ex){
+			ex.getMessage();
+		}
 		
 		JButton btnNewButton = new JButton("Conceder Desconto");
 		btnNewButton.addActionListener(new ActionListener() {
