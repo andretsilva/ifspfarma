@@ -3,11 +3,12 @@
 
 Este projeto foi apresentado como trabalho 2 nas disciplinas de Programação orientada ao objeto e Estrutura de dados II
 formado por:
-     Nome       |    Prontuario
---------------- | ---------------
-André T. Silva | 156219-3
-Andrey Nagatani | 156215-1
-Victor P. de Assis | 146258-x
+        Nome       |     Prontuario
+------------------ | ---------------
+   André T. Silva  |  156219-3
+  Andrey Nagatani  |  156215-1
+Victor P. de Assis |  146258-x
+
 ---------------------------------------------------
 **Instruções de uso:**
 1. Executar script de bando de dados Mysql encontrado na pasta 'MYSQLBD';
