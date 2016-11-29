@@ -152,7 +152,7 @@ public class DefaultUI implements CaixaObserver{
 				new VendaItensUI(caixa);
 			}
 		});
-		//menuVenda.setEnabled(false);
+		menuVenda.setEnabled(false);
 		/*Caixa ccc = new Caixa();
 		ccc.registraInteressado(this);*/
 		

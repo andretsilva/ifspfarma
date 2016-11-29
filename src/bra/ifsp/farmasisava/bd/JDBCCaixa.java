@@ -10,7 +10,7 @@ import java.util.Date;
 import bra.ifsp.farmasisava.model.Caixa;
 
 
-public class JDBCCaixa {
+public class JDBCCaixa implements CaixaDao{
 	public boolean LoginAbertura(String password) {
 		
 		try {
