@@ -3,13 +3,12 @@
 
 Este projeto foi apresentado como trabalho 2 nas disciplinas de Programação orientada ao objeto e Estrutura de dados II
 formado por:
-        Nome       |     Prontuario
------------------- | ---------------
-   André T. Silva  |  156219-3
-  Andrey Nagatani  |  156215-1
-Victor P. de Assis |  146258-x
+* André T. Silva | 156219-3
+* Andrey Nagatani | 156215-1
+* Victor P. de Assis | 146258-x
 
 ---------------------------------------------------
+
 **Instruções de uso:**
 1. Executar script de bando de dados Mysql encontrado na pasta 'MYSQLBD';
 2. Se houver necessidade, configurar String de usuario e senha de conexão com o BD na classe 'ConnectionFactory.java' econtrado na camada DAO do projeto;
@@ -20,7 +19,9 @@ Victor P. de Assis |  146258-x
   * Senha: admin
 5. A funcionalidade(GUI) de 'Venda' está bloqueada por padrão até que se execute a abertura do caixa, para abrir e fechar caixa há a necessidade de se usar uma senha, por padrão o sistema já vem com uma senha mestre cadastrada que é:
   * Abrir e fechar o caixa: 123456789
+
 ---------------------------------------------------
+
 **Troubleshooting(FAQ)**
 Q - O eclipse falha ao tentar executar a 'main' do sistema devido a arquivos de imagens não encontrados.
 A - Verificar na arvore do projeto se a pasta(folder) 'assets' está configurada como 'source folder', se não estiver, configure a mesma como tal;
