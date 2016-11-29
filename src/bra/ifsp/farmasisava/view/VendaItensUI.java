@@ -48,7 +48,6 @@ public class VendaItensUI extends JFrame {
 	private JTable table;
 	private JTextField txtCodigoBarras;
 	private JTextField txtQuantidade;
-	//private JTextField txtCpfDesconto;//aqui
 	private JFormattedTextField txtCpfDesconto;
 	private JTextField txtTotalCompra;
 	private ArrayList<ItemVenda> itens = new ArrayList<ItemVenda>();
@@ -157,11 +156,6 @@ public class VendaItensUI extends JFrame {
 		JLabel lblCpf = new JLabel("CPF");
 		lblCpf.setBounds(10, 19, 46, 14);
 		panel_1.add(lblCpf);
-		
-		/*txtCpfDesconto = new JTextField();
-		txtCpfDesconto.setBounds(10, 36, 104, 20);
-		panel_1.add(txtCpfDesconto);
-		txtCpfDesconto.setColumns(10);*/
 		
 		txtCpfDesconto = new JFormattedTextField();
 		txtCpfDesconto.setBounds(10, 36, 104, 20);

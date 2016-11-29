@@ -19,7 +19,6 @@ public class Caixa {
 	private int moedas50;
 	private int moedas100;
 	private double totalCaixa;
-	/*private boolean caixaAberto = false;*/
 	private String caixaEstado;
 
 	public String getCaixaEstado() {
@@ -133,14 +132,6 @@ public class Caixa {
 	public void somaTotalCaixa(double dinheiro) {
 		this.totalCaixa = this.totalCaixa + dinheiro;
 	}
-
-	/*public boolean isCaixaAberto() {
-		return caixaAberto;
-	}
-
-	public void setCaixaAberto(boolean caixaAberto) {
-		this.caixaAberto = caixaAberto;
-	}*/
 
 	public int getIdCaixa() {
 		return idCaixa;

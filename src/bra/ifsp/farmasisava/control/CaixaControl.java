@@ -20,14 +20,13 @@ public class CaixaControl {
 
 	public void AbrirCaixa(Caixa caixa,DefaultUI ui){
 		caixa.registraInteressado(ui);
-		caixa.setCaixaEstado("aberto");//mudanca para Observer
-//		ui.AtualizaMenu();//mudanca para Observer
+		caixa.setCaixaEstado("aberto");
 		JDBCCaixa bdCaixa = new JDBCCaixa();
 		caixa.setIdCaixa(bdCaixa.AbreCaixa(caixa));
 	};
 	
 	public void FecharCaixa(Caixa caixa,DefaultUI ui){ 
-		caixa.setCaixaEstado("fechado");//mudanca para Observer
+		caixa.setCaixaEstado("fechado");
 		caixa.setMoedas5(0);
 		caixa.setMoedas10(0);
 		caixa.setMoedas25(0);
@@ -41,7 +40,6 @@ public class CaixaControl {
 		caixa.setNotas100(0);
 		JDBCCaixa bdCaixa = new JDBCCaixa();
 		bdCaixa.FechaCaixa(caixa);
-//		ui.AtualizaMenu();
 	};
 	public int ObterNumeroDeVendas() {
 		int total=0;
