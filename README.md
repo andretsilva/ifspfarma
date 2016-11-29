@@ -11,7 +11,7 @@ formado por:
 
 **Instruções de uso:**
 
-1. Executar script de bando de dados Mysql encontrado na pasta 'MYSQLBD';
+1. Executar script de banco de dados Mysql encontrado na pasta 'MYSQLBD';
 
 2. Se houver necessidade, configurar String de usuario e senha de conexão com o BD na classe 'ConnectionFactory.java' econtrado na camada DAO do projeto;
   * Por padrão a String de conexão está configurada com usuário = 'root' e sem senha ou seja pwd ="";
@@ -24,7 +24,7 @@ formado por:
 
 5. A funcionalidade(GUI) de 'Venda' está bloqueada por padrão até que se execute a abertura do caixa, para abrir e fechar caixa há a necessidade de se usar uma senha, por padrão o sistema já vem com uma senha mestre cadastrada que é:
 
-* Abrir e fechar o caixa: 123456789
+  * Abrir e fechar o caixa: 123456789
 
 ---------------------------------------------------
 
