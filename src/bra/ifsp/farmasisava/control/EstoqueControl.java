@@ -1,5 +1,5 @@
 package bra.ifsp.farmasisava.control;
-import javax.swing.JOptionPane;
+//import javax.swing.JOptionPane;
 
 import bra.ifsp.farmasisava.bd.JDBCEstoqueDao;
 import bra.ifsp.farmasisava.bd.JDBCMedicamentoDao;

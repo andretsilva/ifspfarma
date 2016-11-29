@@ -8,7 +8,7 @@ import bra.ifsp.farmasisava.control.MedicamentoControl;
 import bra.ifsp.farmasisava.model.Estoque;
 import bra.ifsp.farmasisava.model.Medicamento;
 
-public class JDBCEstoqueDao {
+public class JDBCEstoqueDao implements EstoqueDao {
 	public Estoque obterEstoque(String codigoBarras) {
 		Medicamento medicamento = new Medicamento();
 		MedicamentoControl mc = new MedicamentoControl();

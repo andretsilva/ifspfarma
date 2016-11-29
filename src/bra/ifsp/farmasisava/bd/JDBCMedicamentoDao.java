@@ -6,7 +6,7 @@ import java.util.HashSet;
 import java.util.Set;
 import bra.ifsp.farmasisava.model.Medicamento;
 
-public class JDBCMedicamentoDao {
+public class JDBCMedicamentoDao implements MedicamentoDao {
 	public void CadastrarMedicamento(Medicamento medicamento) {
 	
 			Connection conexao = 

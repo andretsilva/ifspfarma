@@ -50,17 +50,15 @@ public class DefaultUI implements CaixaObserver{
 			JMenuItem subMenuItemClientesListar = new JMenuItem("Listar");
 			menuClientes.add(subMenuItemClientesCadastrar);
 			menuClientes.add(subMenuItemClientesAlterar);
-			menuClientes.add(subMenuItemClientesListar);
-			
+			menuClientes.add(subMenuItemClientesListar);			
 			
 			subMenuItemClientesCadastrar.addActionListener(new ActionListener(){
 				
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					new ClienteEspeciaisCadastroUI();
-					
+					new ClienteEspeciaisCadastroUI();					
 				}
-			
+				
 			});
 			
 			subMenuItemClientesListar.addActionListener(new ActionListener() {
@@ -148,13 +146,10 @@ public class DefaultUI implements CaixaObserver{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
 				new VendaItensUI(caixa);
 			}
 		});
-		//menuVenda.setEnabled(false);
-		/*Caixa ccc = new Caixa();
-		ccc.registraInteressado(this);*/
+		menuVenda.setEnabled(false);
 		
 		subMenuAbrirCaixa.addActionListener(new ActionListener() {
 			@Override
@@ -210,21 +205,8 @@ public class DefaultUI implements CaixaObserver{
 		barraLateral.add(relogio,BorderLayout.SOUTH);
 	
 		frame.setVisible(true);
-		//AtualizaMenu();
 	}
 	
-	
-	/*public void AtualizaMenu() {
-		if(caixa.isCaixaAberto()) {
-			subMenuAbrirCaixa.setEnabled(false);
-			subMenuFecharCaixa.setEnabled(true);
-			menuVenda.setEnabled(true);
-		} else {
-			subMenuAbrirCaixa.setEnabled(true);
-			subMenuFecharCaixa.setEnabled(false);
-			menuVenda.setEnabled(false);
-		}
-	}*/
 	@Override
 	public void notificaMudanca(Caixa caixa) {
 		if(caixa.getCaixaEstado() == "aberto"){
