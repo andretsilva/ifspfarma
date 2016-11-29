@@ -26,4 +26,5 @@ formado por:
 **Troubleshooting(FAQ)**
 
 Q - O eclipse falha ao tentar executar a 'main' do sistema devido a arquivos de imagens não encontrados.
+
 A - Verificar na arvore do projeto se a pasta(folder) 'assets' está configurada como 'source folder', se não estiver, configure a mesma como tal;
