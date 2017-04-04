@@ -55,7 +55,6 @@ public class MedicamentoCadastrarUI extends JFrame {
 		txtMedicamento.setBounds(10, 29, 184, 20);
 		panel.add(txtMedicamento);
 		txtMedicamento.setColumns(10);
-		
 		JLabel lblFabricante = new JLabel("Fabricante");
 		lblFabricante.setBounds(10, 59, 134, 14);
 		panel.add(lblFabricante);

@@ -31,6 +31,8 @@ import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
 import javax.swing.JScrollPane;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.util.ArrayList;
 
 import java.awt.event.ActionEvent;
@@ -234,14 +236,18 @@ public class VendaItensUI extends JFrame {
 		
 		setVisible(true);
 		
-		rdCartao.addChangeListener(new ChangeListener() {
+		rdDinheiro.addItemListener(new ItemListener() {
 			
 			@Override
-			public void stateChanged(ChangeEvent e) {
+			public void itemStateChanged(ItemEvent e) {
 				// TODO Auto-generated method stub
 				if(rdCartao.isSelected()) {
 					
-				} else {rdCartao.addChangeListener(new ChangeListener() {
+				} else if(cliente.getCpf()!=null){
+					atualizaValorCompra();
+				} else {
+					
+					rdCartao.addChangeListener(new ChangeListener() {
 					
 					@Override
 					public void stateChanged(ChangeEvent e) {
@@ -251,18 +257,16 @@ public class VendaItensUI extends JFrame {
 						}
 					}
 				});
-					if(cliente.getCpf()!=null){
-						txtDesconto.setText(String.valueOf(Double.parseDouble(txtTotalCompra.getText())*0.95));
-					}
+					
 						
 				}
 			}
 		});
-		
-		rdDinheiro.addChangeListener(new ChangeListener() {
+	
+		rdDinheiro.addItemListener(new ItemListener() {
 			
 			@Override
-			public void stateChanged(ChangeEvent e) {
+			public void itemStateChanged(ItemEvent e) {
 				// TODO Auto-generated method stub
 				pgDinheiro = false;
 				if(rdDinheiro.isSelected()) {
@@ -270,6 +274,8 @@ public class VendaItensUI extends JFrame {
 					atualizaValorCompra();
 				}
 			}
+
+			
 		});
 	}
 	
