@@ -235,7 +235,7 @@ public class VendaItensUI extends JFrame {
 		
 		
 		setVisible(true);
-		
+		 
 		rdDinheiro.addItemListener(new ItemListener() {
 			
 			@Override
