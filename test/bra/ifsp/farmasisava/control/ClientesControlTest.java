@@ -21,7 +21,6 @@ public class ClientesControlTest extends TestCase {
 
 	@Test
 	public void testCadastrarCliente0() {
-		//fail("Not yet implemented");
 		SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
 	    try {
 	     Date data = format.parse("05/05/1950");     
@@ -38,14 +37,13 @@ public class ClientesControlTest extends TestCase {
 	    this.objCliente.setTelefone("456456");
 	    this.objCliente.setUf("SP");
 	    
-	    this.objCliente.setCpf("43412622893");
+	    this.objCliente.setCpf("12472658389");
 	    
 	    assertEquals(true, this.objClienteCtrl.CadastrarCliente(objCliente));
 	}
 	
 	@Test
 	public void testCadastrarCliente1() {
-		fail("Not yet implemented");
 		SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
 	    try {
 	     Date data = format.parse("05/05/1950");     

@@ -12,13 +12,13 @@ public class ClientesControl {
 		public boolean CadastrarCliente(Cliente cliente) {
 			JDBCClienteDao cd = new JDBCClienteDao();
 			Cliente checkCliente = cd.obterCliente(cliente.getCpf());
-			if( checkCliente.getCpf() == null ) {
+			if( checkCliente.getCpf() != null ) {
 				cd.CadastrarCliente(cliente);
 				//JOptionPane.showMessageDialog(null, "Cliente cadastrado com Sucesso");
-				return true;
+				return false;
 			} else {
 				//JOptionPane.showMessageDialog(null, "Cpf já cadastrado");
-				return false;
+				return true;
 			}
 		}
 		
