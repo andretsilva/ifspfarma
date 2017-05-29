@@ -30,7 +30,7 @@ public class ClienteTest extends TestCase{
 	}
 	
 	//TOTO
-	@Test(expected = Exception.class) 
+	@Test
 	public void testValidarIdade1() throws Exception{
 		SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
 	    try {
@@ -40,11 +40,11 @@ public class ClienteTest extends TestCase{
 	    catch (Exception ex) {
 	     System.out.println(ex.getMessage());
 	    }
-		assertEquals(true, this.objCliente.validarIdade(this.objCliente.getDataNascimento()));
+		assertEquals(false, this.objCliente.validarIdade(this.objCliente.getDataNascimento()));
 	}
 	
 	//TODO
-	@Test(expected = Exception.class) 
+	
 	public void testValidarIdade2() throws Exception{
 		SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
 	    try {
@@ -54,7 +54,7 @@ public class ClienteTest extends TestCase{
 	    catch (Exception ex) {
 	     System.out.println(ex.getMessage());
 	    }
-		assertEquals(true, this.objCliente.validarIdade(this.objCliente.getDataNascimento()));
+		assertEquals(false, this.objCliente.validarIdade(this.objCliente.getDataNascimento()));
 	}
 
 }

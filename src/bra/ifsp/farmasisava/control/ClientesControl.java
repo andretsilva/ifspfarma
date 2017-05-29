@@ -7,14 +7,18 @@ import javax.swing.JOptionPane;
 
 import bra.ifsp.farmasisava.bd.JDBCClienteDao;
 public class ClientesControl {
-		public void CadastrarCliente(Cliente cliente) {
+	
+		//public void CadastrarCliente(Cliente cliente) {
+		public boolean CadastrarCliente(Cliente cliente) {
 			JDBCClienteDao cd = new JDBCClienteDao();
 			Cliente checkCliente = cd.obterCliente(cliente.getCpf());
 			if( checkCliente.getCpf() == null ) {
 				cd.CadastrarCliente(cliente);
-				JOptionPane.showMessageDialog(null, "Cliente cadastrado com Sucesso");
+				//JOptionPane.showMessageDialog(null, "Cliente cadastrado com Sucesso");
+				return true;
 			} else {
-				JOptionPane.showMessageDialog(null, "Cpf já cadastrado");
+				//JOptionPane.showMessageDialog(null, "Cpf já cadastrado");
+				return false;
 			}
 		}
 		
