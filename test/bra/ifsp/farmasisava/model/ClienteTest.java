@@ -17,6 +17,7 @@ public class ClienteTest extends TestCase{
 		this.objCliente = new Cliente();
 	}
 	
+	@Test
 	public void testValidarIdade0() throws Exception{
 		SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
 	    try {
@@ -29,7 +30,7 @@ public class ClienteTest extends TestCase{
 		assertEquals(true, this.objCliente.validarIdade(this.objCliente.getDataNascimento()));
 	}
 	
-	//TOTO
+	
 	@Test
 	public void testValidarIdade1() throws Exception{
 		SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
@@ -43,8 +44,7 @@ public class ClienteTest extends TestCase{
 		assertEquals(false, this.objCliente.validarIdade(this.objCliente.getDataNascimento()));
 	}
 	
-	//TODO
-	
+	@Test
 	public void testValidarIdade2() throws Exception{
 		SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
 	    try {
